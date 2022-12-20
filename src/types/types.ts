@@ -24,11 +24,11 @@ export type ResponseType<D = {}, RC = ResultCodeEnum> = {
     messages: Array<string>
 }
 export type ProfileType = {
-    userId?: number
-    lookingForAJob?: boolean
+    userId: number
+    lookingForAJob: boolean
     lookingForAJobDescription?: string
-    fullName?: string
-    contacts?: ContactsType
+    fullName: string
+    contacts: ContactsType
     photos: PhotosType 
 }
 export type ContactsType = {
