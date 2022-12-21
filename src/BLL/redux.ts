@@ -9,7 +9,7 @@ import appReducer from "./app-reducer";
 let Rootreducer = combineReducers({
     profile: profileReducer,
     auth: authReducer,
-    user: userReducer,
+    usersPage: userReducer,
     app: appReducer
 });
 

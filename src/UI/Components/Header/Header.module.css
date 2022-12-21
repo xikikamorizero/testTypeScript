@@ -1,0 +1,23 @@
+.headerContainer{
+    background-color: red;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.headerLogo{
+    color:white;
+    margin: 0.5em 0em 0em 1em;
+    font-size: 1.5em;
+}
+.headerMenu{
+        margin: 1em;
+}
+.headerMenu a{
+    color: black;
+    margin: 1em;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+.account{
+    margin: 1em;
+}
