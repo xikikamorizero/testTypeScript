@@ -1,0 +1,48 @@
+.formControl.error input,
+.formControl.error textarea {
+    border: solid red 2px;
+}
+
+
+.formControl.error span {
+    color: red;
+}
+
+.formSummaryError {
+    border: red 1px solid;
+    padding: 5px;
+    color: red;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    min-width: 300px;
+    margin-top: 13%;
+    margin-bottom: 13%;
+    border: 1px solid silver;
+    box-shadow: 4px 5px 5px black;
+}
+
+.forms button {
+    width: 60%;
+    cursor: pointer;
+}
+
+.forms button:hover {
+    color: rgb(14, 88, 79);
+}
+
+.loginFormCenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
