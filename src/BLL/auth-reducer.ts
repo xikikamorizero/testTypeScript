@@ -3,6 +3,7 @@ import { InferActionTypes, BaseThunkType } from './redux';
 import {FormAction, stopSubmit} from 'redux-form'
 import { authAPI, securityAPI } from '../DAL/api'
 import {Nullean} from "./../types/types";
+import {Dispatch} from "redux";
 
 
 // const SET_USER_DATA = 'auth/SET_USER_DATA';
@@ -48,7 +49,8 @@ const action = {
 }
 
 type ActionType = InferActionTypes<typeof action>
-type ThunkType = BaseThunkType<ActionType | FormAction>
+export type ThunkType = BaseThunkType<ActionType | FormAction>
+export type DispatchType = Dispatch<ActionType>
 
 // export const setAuthUserData = (userId: number, email: string, login: string, isAuth: boolean) => {
 //     return {

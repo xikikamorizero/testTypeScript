@@ -2,6 +2,7 @@ import { getAuthUserData } from "./auth-reducer"
 import {BaseThunkType, InferActionTypes} from "./redux";
 import {authAPI} from "../DAL/api";
 import {ResultCodeEnum} from "../types/types";
+import {Dispatch} from "redux";
 
 const INITIALIZED_SUCCESS = 'INITIALIZED_SUCCESS';
 
@@ -25,7 +26,8 @@ const appReducer = (state = initialState, action:ActionType):InitialStateType =>
 }
 
 type ActionType = InferActionTypes<typeof action>
-type ThunkType = BaseThunkType<ActionType>
+type ThunkType = BaseThunkType<ActionType, void>
+type DispatchType = Dispatch<ActionType>
 
 const action = {
     initializedSuccess : () => ({
@@ -39,12 +41,12 @@ export const initializedSuccess = () => {
     }
 }
 
-// export const initializeApp = ():ThunkType =>
-//     (dispatch) => {
-//         let promise = dispatch(getAuthUserData());
-//         Promise.all([promise]).then(() => {
-//             dispatch(action.initializedSuccess());
-//         });
-//     }
+export const initializeApp = ():ThunkType =>
+    (dispatch) => {
+        let promise = dispatch(getAuthUserData());
+        Promise.all([promise]).then(() => {
+            dispatch(action.initializedSuccess());
+        });
+    }
 
 export default appReducer;
