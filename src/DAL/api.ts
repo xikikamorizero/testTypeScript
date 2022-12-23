@@ -1,5 +1,5 @@
 import { ResponseType, ResultCodeEnum, ResultCodeForCaptcha1, UserType } from './../types/types';
-import axios from 'axios';
+import axios, {AxiosResponse} from 'axios';
 import { ProfileType } from '../types/types';
 
 type MeResponseType = {

@@ -3,6 +3,7 @@ import {usersAPI} from '../DAL/api';
 import {BaseThunkType, InferActionTypes} from "./redux";
 import {Dispatch} from "redux";
 import {updateObjectInArray} from "../types/objectHelper";
+import {FollowedType} from "./../types/types";
 
 
 const FOLLOW = 'users/FOLLOW';
@@ -150,11 +151,11 @@ export const getUsers = (currentPage:number, pageSize:number):ThunkType => {
     }
 }
 
-const followUnfollowFlow = async (dispatch:Dispatch<ActionType>, userId:number, apiMethod:any, actionCreator:(userId:number)=>ActionType) => {
+const followUnfollowFlow = async (dispatch:Dispatch<ActionType>, userId:number, apiMethod:FollowedType<number>, actionCreator:(userId:number)=>ActionType) => {
     dispatch(action.toggleFollowingProgress(true, userId));
     let data = await apiMethod(userId)
 
-    if (data.resultCode === ResultCodeEnum.Success) {
+    if (data.data.resultCode === ResultCodeEnum.Success) {
         dispatch(actionCreator(userId));
     }
     dispatch(action.toggleFollowingProgress(false, userId));

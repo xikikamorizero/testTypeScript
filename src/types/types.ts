@@ -1,3 +1,5 @@
+import {AxiosResponse} from "axios/index";
+
 export enum ResultCodeEnum {
     Success = 0,
     Error = 1,
@@ -42,3 +44,5 @@ export type ContactsType = {
     mainLink: string | null
 }
 export type Nullean<T> = T | null
+
+export type FollowedType<T,R=ResponseType> = (item:T)=>Promise<AxiosResponse<R>>

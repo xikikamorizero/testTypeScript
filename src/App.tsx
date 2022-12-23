@@ -54,7 +54,7 @@ const MainApp = () => {
     return (
         <BrowserRouter>
             <Provider store={store}>
-                <AppContainer/>
+                <AppContainer />
             </Provider>
         </BrowserRouter>
     )
