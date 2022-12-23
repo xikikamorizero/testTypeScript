@@ -1,0 +1,191 @@
+.headerBurger {
+    display: none;
+}
+
+.menuBurger {
+    display: none;
+}
+
+.activeMenu {
+    display: none;
+}
+
+.burger {
+    display: none;
+}
+
+.mainBurger {
+    display: none;
+}
+
+.menuBurgerOff {
+    display: none;
+}
+
+@media (max-width: 990px) {
+    .burger {
+        display: block;
+        margin-right: 10px;
+    }
+
+    .menuBurgerOff {
+        display: block;
+        max-width: 26px;
+        cursor: pointer;
+        min-height: 26px;
+    }
+
+    .menuBurgerOff::before {
+        content: '';
+        background-color: rgb(134, 0, 0);
+        position: absolute;
+        width: 8%;
+        height: 3px;
+        top: 12px;
+        transform: rotate(-45deg);
+    }
+
+    .menuBurgerOff::after {
+        content: '';
+        background-color: rgb(134, 0, 0);
+        position: absolute;
+        width: 8%;
+        height: 3px;
+        top: 12px;
+        transform: rotate(45deg);
+    }
+
+    .headerBurger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+    }
+
+    .headerBurger::before,
+    .headerBurger::after {
+        content: '';
+        background-color: rgb(134, 0, 0);
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+    }
+
+    .headerBurger::before {
+        top: 0;
+    }
+
+    .headerBurger::after {
+        bottom: 0;
+    }
+
+    .menuBurger {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 40%;
+        height: 100%;
+        background-color: rgb(26, 26, 26);
+        transition: all 0.3s ease 0s;
+    }
+
+    .activeMenu {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 60%;
+        width: 40%;
+        height: 100%;
+        background-color: rgb(26, 26, 26);
+        transition: all 0.3s ease 0s;
+    }
+
+    .menuT {
+        min-height: 90px;
+    }
+
+    .menuBurger span {
+        background-color: rgb(134, 0, 0);
+        max-width: 25px;
+    }
+
+    .menuP {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menuP a {
+        display: block;
+        font-weight: 700;
+        text-decoration: none;
+        color: silver;
+        cursor: pointer;
+        padding-top: 1%;
+        padding-left: 10%;
+        width: 100%;
+    }
+
+    .headerBurger span {
+        position: absolute;
+        background-color: rgb(134, 0, 0);
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+    }
+
+    .blockM {
+        display: flex;
+        border-bottom: 1px solid silver;
+        border-top: 1px solid silver;
+        width: 100%;
+        height: 35px;
+        justify-content: center;
+    }
+
+    .blockM:active {
+        background-color: rgb(73, 18, 18);
+    }
+
+    .loginB {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 82px;
+    }
+
+    #profileB {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    #logout {
+        color: red;
+    }
+
+    .mainBurger {
+        display: block;
+    }
+}
+
+@media (max-width: 630px) {
+    .activeMenu {
+        left: 40%;
+        width: 60%;
+    }
+}
+
+@media (max-width: 420px) {
+    .activeMenu {
+        left: 0;
+        width: 100%;
+    }
+}

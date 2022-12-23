@@ -79,6 +79,3 @@ export const profileAPI = {
     return instance.put('profile', profile)
   }
 }
-
-
-authAPI.me().then(res => res.data) 

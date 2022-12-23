@@ -8,7 +8,7 @@ import {initializeApp} from "./BLL/app-reducer";
 import Footer from "./UI/Components/Footer/Footer";
 import {compose} from 'redux'
 import {withAuthRedirect} from "./UI/Hoc/withAuthRedirect";
-import footer from "./UI/Components/Footer/Footer";
+import Login from "./UI/Components/Login/Login";
 
 const App: React.FC<MapStateToPropsType & MapDispatchToPropsType> = (props) => {
     useEffect(() => {
@@ -21,14 +21,14 @@ const App: React.FC<MapStateToPropsType & MapDispatchToPropsType> = (props) => {
     }
     return (
         <div className="App">
-            <div className="app-wrapper">
-                <Header/>
-                <div className="app-wrapper-content">
-                    <Routes>
-                        <Route path='/login' element={<Footer />} />
-                    </Routes>
-                </div>
+            <Header/>
+            <div className="app-wrapper-content">
+                <Routes>
+                    <Route path='/' element={''} />
+                    <Route path='/login' element={<Login/>}/>
+                </Routes>
             </div>
+            <Footer/>
         </div>
     );
 }
@@ -54,7 +54,7 @@ const MainApp = () => {
     return (
         <BrowserRouter>
             <Provider store={store}>
-               <AppContainer/>
+                <AppContainer/>
             </Provider>
         </BrowserRouter>
     )

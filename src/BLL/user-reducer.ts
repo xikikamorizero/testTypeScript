@@ -1,7 +1,9 @@
 import {ResultCodeEnum, UserType} from './../types/types';
-import { usersAPI } from '../DAL/api';
+import {usersAPI} from '../DAL/api';
 import {BaseThunkType, InferActionTypes} from "./redux";
 import {Dispatch} from "redux";
+import {updateObjectInArray} from "../types/objectHelper";
+
 
 const FOLLOW = 'users/FOLLOW';
 const UNFOLLOW = 'users/UNFOLLOW';
@@ -24,16 +26,16 @@ type InitialStateType = typeof initialState
 
 const userReducer = (state = initialState, action:ActionType): InitialStateType => {
     switch (action.type) {
-        // case FOLLOW:
-        //     return {
-        //         ...state,
-        //         users: updateObjectInArray(state.users, action.userId, "id", { followed: true })
-        //     }
-        // case UNFOLLOW:
-        //     return {
-        //         ...state,
-        //         users: updateObjectInArray(state.users, action.userId, "id", { followed: false })
-        //     }
+        case FOLLOW:
+            return {
+                ...state,
+                users: updateObjectInArray(state.users, action.userId, "id", { followed: true })
+            }
+        case UNFOLLOW:
+            return {
+                ...state,
+                users: updateObjectInArray(state.users, action.userId, "id", { followed: false })
+            }
         case SET_USERS: {
             return { ...state, users: action.users }
         }
